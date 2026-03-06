@@ -1,3 +1,13 @@
+## Hackathon Team Project
+
+This project was developed during a hackathon by a team of three developers, focusing on building a functional prototype within a limited time frame.
+
+Team Members:
+- Brahmleen Kaur
+- Simran Juneja
+- Tanish Vansil
+
+
 FRIDGEWHIZZ
 
 FridgeWhizz is an intelligent web application that helps users decide what to cook based on the contents of their fridge. By simply uploading a picture of your fridge, the app identifies available ingredients, gathers user preferences, and suggests recipes tailored to taste, skill level, and dietary preferences.
