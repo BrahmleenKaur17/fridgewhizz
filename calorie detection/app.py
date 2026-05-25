@@ -20,7 +20,10 @@ templates = Jinja2Templates(directory="templates")
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
     print("✅ Home page loaded")
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html"
+    )
 
 
 @app.post("/analyze", response_class=HTMLResponse)
@@ -65,19 +68,18 @@ async def analyze(
     # Step 4: Predict recipes
     recipes = predict_recipes(ingredients, mood, diet, skill, mode)
     print(f"🍽️ Recommended recipes: {len(recipes)} found")
-
     return templates.TemplateResponse(
-        "results.html",
-        {
-            "request": request,
+        request=request,
+        name="results.html",
+        context={
             "ingredients": ingredients,
             "recipes": recipes,
             "mood": mood,
             "diet": diet,
             "skill": skill,
             "mode": mode,
-            "user_id": user_id,
-        },
+            "user_id": user_id
+        }
     )
 
 
@@ -103,8 +105,10 @@ async def feedback(
 
     update_preference(user_id, change)
     print(f"💾 Taste model updated → {change}")
-
     return templates.TemplateResponse(
-        "thanks.html",
-        {"request": request, "message": message},
+        request=request,
+        name="thanks.html",
+        context={
+            "message": message
+        }
     )

@@ -1,52 +1,85 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>FridgeWhizz</title>
-  <link rel="stylesheet" href="/static/style1.css">
-</head>
-<body>
- 
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FridgeWhizz AI</title>
 
-  <h1>🍳 FridgeWhizz</h1>
-  <form action="/analyze" method="post" enctype="multipart/form-data">
-    <input type="hidden" name="user_id" value="default">
-    
-    <label>Upload fridge image:</label>
-    <input type="file" name="file" required><br><br>
+    <link rel="stylesheet" href="/static/style1.css" />
 
-    <label>Mood:</label>
-    <select name="mood">
-      <option>Lazy</option>
-      <option>Stressed</option>
-      <option>Happy</option>
-      <option>Energetic</option>
-    </select><br><br>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-    <label>Diet:</label>
-    <select name="diet">
-      <option>Veg</option>
-      <option>Non-Veg</option>
-      <option>Jain</option>
-      <option>Vegan</option>
-    </select><br><br>
+  <body>
+    <div class="overlay"></div>
 
-    <label>Cooking Skill:</label>
-    <select name="skill">
-      <option>Beginner</option>
-      <option>Intermediate</option>
-      <option>Expert</option>
-    </select><br><br>
+    <div class="main-container">
+      <div class="hero-section">
+        <h1>🍳 FridgeWhizz</h1>
+        <p>
+          Turn your fridge ingredients into delicious AI-powered recipes
+          instantly.
+        </p>
+      </div>
 
-    <label>Mode:</label>
-    <select name="mode">
-      <option>Normal</option>
-      <option>Lazy</option>
-    </select><br><br>
+      <div class="glass-card">
+        <form
+          class="home-form"
+          action="/analyze"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <input type="hidden" name="user_id" value="default" />
 
-    <button type="submit">Predict Recipes 🔮</button>
-  </form>
+          <div class="upload-box">
+            <label>📸 Upload Fridge Image</label>
+            <input type="file" name="file" required />
+          </div>
 
-  <!-- 🌟 Floating food movement animation -->
- 
-</body>
+          <div class="form-group">
+            <label>😊 Mood</label>
+            <select name="mood">
+              <option>Lazy</option>
+              <option>Stressed</option>
+              <option>Happy</option>
+              <option>Energetic</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>🥗 Diet</label>
+            <select name="diet">
+              <option>Veg</option>
+              <option>Non-Veg</option>
+              <option>Jain</option>
+              <option>Vegan</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>👩‍🍳 Cooking Skill</label>
+            <select name="skill">
+              <option>Beginner</option>
+              <option>Intermediate</option>
+              <option>Expert</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label>⚡ Mode</label>
+            <select name="mode">
+              <option>Normal</option>
+              <option>Lazy</option>
+            </select>
+          </div>
+
+          <button type="submit">✨ Predict Recipes</button>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>

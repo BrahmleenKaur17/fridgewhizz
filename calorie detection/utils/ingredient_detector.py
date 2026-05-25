@@ -18,7 +18,7 @@ print(f"🔄 Loading fallback model (BLIP) on {device.upper()}...")
 # ✅ Correct way: use device=0 for GPU, -1 for CPU automatically
 device_arg = 0 if device == "cuda" else -1
 hf_model = pipeline(
-    "image-to-text",
+    "image-text-to-text",
     model="Salesforce/blip-image-captioning-base",
     device=device_arg
 )

@@ -1,7 +1,3 @@
-/* ===== Coffee Blend Café Aesthetic ===== */
-
-@import url('https://images.unsplash.com/photo-1509042239860-f550ce710b93');
-
 * {
   margin: 0;
   padding: 0;
@@ -9,215 +5,314 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #f5e8d7 0%, #e4c9a3 100%);
-  background-image: url('brooke-lark-jUPOXXRNdcA-unsplash.jpg');
-  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  min-height: 100vh;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.72)),
+    url("https://images.unsplash.com/photo-1498837167922-ddd27525d352?q=80&w=1974&auto=format&fit=crop");
   background-position: center;
   background-attachment: fixed;
-  color: #3f2b17;
-  text-align: center;
-  padding: 60px 20px;
-  min-height: 100vh;
-  backdrop-filter: blur(5px);
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow-x: hidden;
+}
+
+.main-container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 }
 
-h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 3.2em;
-  color: #412516;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.15);
-  margin-bottom: 40px;
-  animation: fadeDown 1.2s ease-out;
-}
-h2 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.8em;
-  color: #402721;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.15);
-  margin-bottom: 40px;
-  animation: fadeDown 1.2s ease-out;
-}
-h3 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.2em;
-  color: #1e120b;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.15);
-  margin-bottom: 40px;
-  animation: fadeDown 1.2s ease-out;
+.hero-section {
+  text-align: center;
+  margin-bottom: 35px;
+  animation: fadeIn 1s ease;
 }
 
+.hero-section h1 {
+  font-size: 3.4rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: white;
+  text-shadow: 0 0 25px rgba(255, 255, 255, 0.18);
+}
 
-form {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 35px 45px;
-  border-radius: 20px;
-  box-shadow: 0 8px 30px rgba(80, 60, 40, 0.2);
-  display: inline-block;
-  text-align: left;
-  max-width: 450px;
-  animation: floatUp 1.4s ease-out;
+.hero-section p {
+  font-size: 1.1rem;
+  color: #f1f1f1;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.glass-card {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  animation: slideUp 0.9s ease;
+}
+
+.home-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 label {
-  font-weight: 600;
-  color: #2f2313;
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 500;
+  color: white;
 }
 
-input, select {
+input[type="file"],
+select {
   width: 100%;
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  outline: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 15px;
+  backdrop-filter: blur(10px);
+  transition: 0.3s ease;
+}
+
+select:focus,
+input[type="file"]:focus {
+  border: 1px solid #ff9966;
+  box-shadow: 0 0 15px rgba(255, 153, 102, 0.4);
+}
+
+.upload-box {
   padding: 10px;
-  margin-top: 5px;
-  margin-bottom: 20px;
-  border: 2px solid #c5a880;
-  border-radius: 10px;
-  background: #fffdf8;
-  transition: all 0.3s ease;
-  font-size: 1em;
+  border: 2px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 18px;
+  transition: 0.3s ease;
 }
 
-input:focus, select:focus {
-  border-color: #7f572e;
-  box-shadow: 0 0 10px rgba(158, 108, 59, 0.3);
-  transform: scale(1.02);
+.upload-box:hover {
+  border-color: #ffb347;
+  background: rgba(255, 255, 255, 0.05);
 }
 
-/*button {
-  width: 100%;
-  background: linear-gradient(90deg, #c49a6c, #8b5e3c);
-  color: #fff;
-  font-weight: bold;
+button {
+  padding: 16px;
   border: none;
-  border-radius: 12px;
-  padding: 12px;
-  font-size: 1.1em;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
-  transition: all 0.4s ease;
+  transition: 0.3s ease;
+  box-shadow: 0 6px 18px rgba(255, 94, 98, 0.4);
+  letter-spacing: 0.5px;
 }
 
 button:hover {
-  background: linear-gradient(90deg, #8b5e3c, #c49a6c);
-  box-shadow: 0 6px 18px rgba(100, 60, 20, 0.3);
-  transform: translateY(-3px);
-}*/
-button, a.button {
-  background: linear-gradient(90deg, #6d4329, #c3895f);
-  color: #fff;
-  padding: 14px 34px;
-  border-radius: 12px;
-  border: none;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 25px;
-  box-shadow: 0 5px 15px rgba(139, 97, 71, 0.35);
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-  width:100%;
-}
-button::after, a.button::after {
-  content: "";
-  position: absolute;
-  top: 0; left: -75%;
-  width: 50%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.25);
-  transform: skewX(-25deg);
-  transition: 0.75s;
-}
-button:hover::after, a.button:hover::after {
-  left: 130%;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(255, 94, 98, 0.5);
 }
 
-button:hover, a.button:hover {
-  transform: translateY(-3px);
-  background: linear-gradient(135deg, #c5916d, #a7795d);
-  box-shadow: 0 8px 25px rgba(165, 119, 90, 0.45);
-}
-
-/*@keyframes fadeDown {
-  0% { opacity: 0; transform: translateY(-30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes floatUp {
-  0% { opacity: 0; transform: translateY(30px); }
-  100% { opacity: 1; transform: translateY(0); }
-}*/
-
-/* Optional coffee steam animation */
-body::before {
-  content: '';
-  position: fixed;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: url('https://i.imgur.com/o9w0QqL.png') repeat;
-  opacity: 0.05;
-  animation: steam 10s infinite linear;
-  pointer-events: none;
-  
- 
-}
-
-/*@keyframes steam {
-  from { background-position: 0 0; }
-  to { background-position: 0 -500px; }
-}*/
-/* ====== RECIPE CONTAINER ====== */
 .recipe-output {
-  background: rgba(255, 255, 255, 0.75);
-  border-radius: 22px;
-  box-shadow: 0 15px 40px rgba(80, 60, 40, 0.15);
-  padding: 35px;
-  max-width: 900px;
-  width: 90%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 40px;
-  backdrop-filter: blur(10px) saturate(110%);
-  transform: perspective(1000px) rotateX(5deg);
-  transition: all 0.6s ease;
-  animation: slideUp 1.2s ease forwards;
-  
+  width: 100%;
+  max-width: 1000px;
+  padding: 40px;
+  margin-top: 30px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: white;
+  line-height: 1.9;
+  font-size: 18px;
 }
 
-.recipe-output:hover {
-  transform: perspective(900px) rotateX(0deg) translateY(-5px) scale(1.02);
-  box-shadow: 0 25px 60px rgba(106, 78, 66, 0.25);
-  background: rgba(255, 255, 255, 0.85);
+a {
+  color: #ffd369;
+  text-decoration: none;
+  font-weight: 600;
 }
 
-@media (max-width: 700px) {
-  h1 { font-size: 2.2rem; }
-  .recipe-output { padding: 25px; }
-  button { width: 100%; }
+a:hover {
+  text-decoration: underline;
 }
-/* ====== ANIMATIONS ====== */
+
+h2,
+h3 {
+  color: white;
+  text-align: center;
+  margin-top: 20px;
+}
+
+hr {
+  margin: 30px 0;
+  border: 0.5px solid rgba(255, 255, 255, 0.2);
+}
+
 @keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes floatIn {
-  from { opacity: 0; transform: translateY(-25px) rotateX(15deg); }
-  to { opacity: 1; transform: translateY(0) rotateX(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-@keyframes drift {
-  0% { transform: translateX(-10vw); }
-  100% { transform: translateX(110vw); }
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2.7rem;
+  }
+
+  .glass-card {
+    padding: 25px;
+    animation: floatCard 4s ease-in-out infinite;
+    transition: all 0.3s ease;
+  }
+  .glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+  }
+  button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 0 25px rgba(236, 72, 153, 0.5);
+  }
+
+  .recipe-output {
+    padding: 25px;
+    font-size: 16px;
+  }
+}
+option {
+  color: black;
+}
+@keyframes floatCard {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+.results-page {
+  overflow-x: hidden;
+}
+
+.results-page .recipe-output {
+  width: 70%;
+  margin: 40px auto;
+  padding: 35px;
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  color: white;
+  line-height: 2;
+  font-size: 18px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.results-page h1,
+.results-page h2,
+.results-page h3,
+.results-page p {
+  text-align: center;
+  color: white;
+}
+
+.results-page form {
+  width: auto;
+  background: transparent;
+  box-shadow: none;
+  border: none;
+  margin-top: 20px;
+}
+
+.results-page button {
+  margin: 10px;
+}
+
+.results-page a {
+  color: #ffd166;
+  font-weight: bold;
+  text-decoration: none;
+}
+.results-page {
+  display: block !important;
+  padding: 40px 0;
+}
+
+.results-page body {
+  display: block;
+}
+.ingredients-text {
+  margin-top: 10px;
+  margin-bottom: 25px;
+  font-size: 18px;
+  color: #f3f3f3;
+}
+.feedback-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-card {
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(14px);
+  padding: 50px;
+  border-radius: 30px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
+  animation: fadeIn 0.8s ease;
+}
+
+.feedback-card h1 {
+  font-size: 3rem;
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+.home-btn {
+  display: inline-block;
+  padding: 14px 28px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899);
+  color: white !important;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.home-btn:hover {
+  transform: scale(1.05);
 }
