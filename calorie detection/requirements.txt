@@ -7,4 +7,5 @@ numpy
 scikit-learn
 opencv-python
 openai
+python-dotenv
 
